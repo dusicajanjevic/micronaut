@@ -41,12 +41,12 @@
     margin-left: 30px;
     width: 350px;
     height: 400px;
-    background: rgba(189, 118, 162, 0.795);
+    background: rgba(229, 147, 198, 0.795);
 }
 
 .notes{
     border-radius: 20px 0px 0px 20px;
-    background: rgba(107, 9, 69, 0.959);
+    background: rgba(126, 45, 95, 0.959);
     width: 500px;
     height: 500px;
     margin-left: 10px;
@@ -55,14 +55,14 @@
 }
 .delete{
     border-radius: 20px;
-    background: rgba(163, 22, 109, 0.904);  
+    background: rgba(161, 63, 124, 0.904);  
     width: 300px;
     height: 400px;
     margin-left: 10px;
 }
 .find{
     border-radius: 20px;
-    background: rgba(190, 94, 153, 0.842);
+    background: rgba(192, 103, 158, 0.842);
     width: 330px;
     height: 400px;
     margin-left: 10px;   
