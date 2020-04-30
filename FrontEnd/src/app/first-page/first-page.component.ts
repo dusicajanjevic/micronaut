@@ -20,13 +20,13 @@ export class FirstPageComponent implements OnInit {
 
   constructor(private service:Service,private _snackBar: MatSnackBar) { 
     this.notes=new Array();
-    // this.service.getAll().subscribe((response : Note[]) => {
-    //   if(response != null && response != undefined){
-    //       response.forEach(note => {
-    //         this.notes.push(note);
-    //       });
-    //   }
-    // });
+    this.service.getAll().subscribe((response : Note[]) => {
+      if(response != null && response != undefined){
+          response.forEach(note => {
+            this.notes.push(note);
+          });
+      }
+    });
   }
   openSnackBar(message: string, action: string) {
       this._snackBar.open(message, action, {
