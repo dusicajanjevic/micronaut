@@ -1,3 +1,6 @@
 micronaut:
   application:
     name: complete
+  server:
+    cors:
+      enabled: true
