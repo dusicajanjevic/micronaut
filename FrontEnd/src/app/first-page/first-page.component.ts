@@ -51,7 +51,7 @@ export class FirstPageComponent implements OnInit {
             this.openSnackBar("Note is deleted","");
       }
     },(error)=>{
-      this.openSnackBar("Error","");
+      this.openSnackBar("no note with that id exists","");
     });  
   }
   onFind(){
@@ -60,7 +60,7 @@ export class FirstPageComponent implements OnInit {
       this.findNoteText=response.text;
     } 
     },(error)=>{
-      this.openSnackBar("Error","");
+      this.openSnackBar("no note with that id exists","");
     }
     );  
   }
