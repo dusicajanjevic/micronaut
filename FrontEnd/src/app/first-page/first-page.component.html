@@ -19,8 +19,8 @@
         <div class="find">
             <div class="text">Find one note</div>
             <mat-form-field  style="margin: 10%; width: 210px;">
-                <mat-label>Name</mat-label>
-                <input matInput [(ngModel)]="findName" placeholder="Write name of note">
+                <mat-label>ID</mat-label>
+                <input matInput [(ngModel)]="findId" placeholder="Write name of note">
               </mat-form-field>
               <button mat-flat-button style="margin-top: 0px;" class="button" (click)="onFind()">Find</button>
               <div *ngIf="findNoteText!=undefined">
@@ -33,8 +33,8 @@
         <div class="delete">
             <div class="text">Delete one note</div>
             <mat-form-field style="margin: 10%; width: 230px;">
-                <mat-label>Name</mat-label>
-                <input matInput [(ngModel)]="deleteName" placeholder="Write name of note">
+                <mat-label>ID</mat-label>
+                <input matInput [(ngModel)]="deleteId" placeholder="Write name of note">
               </mat-form-field>
               <button mat-flat-button (click)="onDelete()" style="margin-top: 0px;"class="button">Delete</button>
         </div>
@@ -43,7 +43,8 @@
             <hr >
             <div *ngFor="let note of notes" class="background">
                 <div class="oneNote">
-                    <mat-label style="margin:40px;">Name: {{note.name}}</mat-label>
+                    <mat-label style="margin:40px;">Name: {{note.title}}</mat-label>
+                    <mat-label style="margin:40px;">ID: {{note.id}}</mat-label>
                     <mat-form-field appearance="fill" class="noteInput">
                         <mat-label>Text:</mat-label>
                         <textarea class="noteInputTextArea" matInput>{{note.text}}</textarea>

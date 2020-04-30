@@ -9,14 +9,14 @@ import { element } from 'protractor';
   templateUrl: './first-page.component.html',
   styleUrls: ['./first-page.component.css']
 })
-export class FirstPageComponent implements OnInit {
+export class FirstPageComponent implements OnInit { 
 
-  findNoteText:string;
   notes:Note[];
-  deleteName:string;
-  findName:string;
+  deleteId:string;
+  findId:string;
   name:string;
   text:string;
+  findNoteText:string;
 
   constructor(private service:Service,private _snackBar: MatSnackBar) { 
     this.notes=new Array();
@@ -45,18 +45,23 @@ export class FirstPageComponent implements OnInit {
     });
   }
   onDelete(){
-    var noteIndex=this.notes.findIndex(note=>note.title===this.deleteName);
-    this.service.delete(this.notes[noteIndex].id).subscribe((response : Note) => {
+    this.service.delete(this.deleteId).subscribe((response : Note) => {
       if(response != null && response != undefined){
-            this.notes.splice(noteIndex,0);
+            this.notes.splice(this.notes.findIndex(note=>note.id===this.deleteId)-1,1);
             this.openSnackBar("Note is deleted","");
       }
+    },(error)=>{
+      this.openSnackBar("Error","");
     });  
   }
   onFind(){
-    var noteIndex=this.notes.findIndex(note=>note.title===this.deleteName);
-    this.service.find(this.notes[noteIndex].id).subscribe((response : Note) => {
+    this.service.find(this.findId).subscribe((response : Note) => {
+      if(response != null && response != undefined){
       this.findNoteText=response.text;
-    });  
+    } 
+    },(error)=>{
+      this.openSnackBar("Error","");
+    }
+    );  
   }
 }
