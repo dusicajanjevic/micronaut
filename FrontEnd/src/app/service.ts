@@ -10,15 +10,15 @@ export class Service{
     }
     
     post(note : Note){
-        return this.http.post("http://localhost:8080/post",note)
+        return this.http.post("http://localhost:8080/note",note)
     }
 	getAll(){
-		return this.http.get("http://localhost:8080/post/")
+		return this.http.get("http://localhost:8080/note")
     }
     find(id:string){		
-        return this.http.get("http://localhost:8080/post/"+id)
+        return this.http.get("http://localhost:8080/note/"+id)
     } 
     delete(id:String){
-        return this.http.delete("http://localhost:8080/post/"+id)
+        return this.http.delete("http://localhost:8080/note/"+id)
     }
 }

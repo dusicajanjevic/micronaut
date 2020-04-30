@@ -1,14 +1,14 @@
 package example.gateway.Models;
 
-public class Post {
+public class Note {
 
     private int id;
     private String title;
     private String text;
 
-    public Post() {}
+    public Note() {}
 
-    public Post(String title, String text) {
+    public Note(String title, String text) {
         this.title = title;
         this.text = text;
     }
